@@ -9,12 +9,16 @@
 /*global $*/
 // DOCUMENT READY FUNCTION BELOW
 $(document).ready(function(){
+    var first = 0;
+    var second = 0;
     var randomNumber = 0;
     var userChoice = "";
     var computerChoice = "";
     var winner = "";
     $("button").click(function(){
-        var userChoice = $("#input").val()
+        userChoice = $("#input").val();
+        var small = userChoice.toLocaleLowerCase();
+        computerChoice = $("#computerChoice").html();
         $("#userChoice").text(userChoice);
         var randomNumber = Math.random();
         if(randomNumber <= .33){
@@ -45,16 +49,21 @@ $(document).ready(function(){
             $("#winner").text("Tie");
         }else{
         }
-        var first = 0;
-        var second = 0;
-        $("button").click(function(){
+        
+       
             if($("#winner").text() === "User Wins"){
-                var first = first + 1;
+                 first = first + 1;
+                $(".first").text(first);
             }else if($("#winner").text() === "Computer Wins"){
-                var second = second + 1;
+                 second = second + 1;
+                $(".second").text(second);
             }else{
             }
-            
-        });
+        
+        
+        
+        $("#input").val("");
+        
+        
     });
 });
