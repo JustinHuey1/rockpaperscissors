@@ -56,7 +56,7 @@ $(document).ready(function(){
                 winner = 0;
             }
         }else {
-            $("#input").val();
+            $("#input").val("");
             $("#winner").text("Please type a valid input");
         }
          
