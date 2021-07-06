@@ -60,7 +60,6 @@ $(document).ready(function(){
         }else {
             $("#input").text();
             $("#winner").text("Please type a valid input");
-            return;
         }
          
         if(winner == 1){
@@ -71,7 +70,7 @@ $(document).ready(function(){
             computerScore = computerScore + 1;
             $(".computerScore").text(computerScore);
             $("#winner").text("Computer Wins");
-        } else {
+        } else if (winner == 0){
             $("#winner").text("Tie");
         }
         
