@@ -58,10 +58,10 @@ $(document).ready(function(){
         }else {
             $("#input").val("");
             $("#winner").text("Please type a valid input");
+            console.log(2);
         }
          
         if (winner != false) {
-            console.log(2);
             if (winner == 1){
                 userScore = userScore + 1;
                 $(".userScore").text(userScore);
