@@ -19,8 +19,8 @@ $(document).ready(function(){
 
         userChoice = $("#input").val();
         var small = userChoice.toLowerCase();
-        $("#userChoice").text(userChoice);
-        
+        $("#userChoice").text(small);
+
         var randomNumber = Math.random();
         if(randomNumber < 0.33){
             computerChoice = "rock";
