@@ -21,7 +21,6 @@ $(document).ready(function(){
 
         userChoice = $("#input").val();
         var small = userChoice.toLowerCase();
-        $("#userChoice").text(small);
 
         var randomNumber = Math.random();
         if(randomNumber < 0.33){
@@ -32,7 +31,6 @@ $(document).ready(function(){
             computerChoice = "scissor";
         }
 
-        $("#computerChoice").text(computerChoice);
         if(small === "rock") {
             if (computerChoice === "rock"){
                 winner = 0;
@@ -74,5 +72,7 @@ $(document).ready(function(){
             $("#winner").text("Tie");
         }
         
+        $("#userChoice").text(small);
+        $("#computerChoice").text(computerChoice);
     });
 });
