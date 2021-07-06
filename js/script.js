@@ -61,17 +61,18 @@ $(document).ready(function(){
         }
          
         if (winner != false) {
-        if (winner == 1){
-            userScore = userScore + 1;
-            $(".userScore").text(userScore);
-            $("#winner").text("User Wins");
-        }else if(winner == 2){
-            computerScore = computerScore + 1;
-            $(".computerScore").text(computerScore);
-            $("#winner").text("Computer Wins");
-        } else if (winner == 3){
-            $("#winner").text("Tie");
-        }
+            console.log(2);
+            if (winner == 1){
+                userScore = userScore + 1;
+                $(".userScore").text(userScore);
+                $("#winner").text("User Wins");
+            }else if(winner == 2){
+                computerScore = computerScore + 1;
+                $(".computerScore").text(computerScore);
+                $("#winner").text("Computer Wins");
+            } else if (winner == 3){
+                $("#winner").text("Tie");
+            }
 
         $("#userChoice").text(small);
         $("#computerChoice").text(computerChoice);
