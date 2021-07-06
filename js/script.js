@@ -60,6 +60,7 @@ $(document).ready(function(){
             $("#winner").text("Please type a valid input");
         }
          
+        if (winner != false) {
         if (winner == 1){
             userScore = userScore + 1;
             $(".userScore").text(userScore);
@@ -71,10 +72,10 @@ $(document).ready(function(){
         } else if (winner == 3){
             $("#winner").text("Tie");
         }
-        
-        if (winner){
-            $("#userChoice").text(small);
-            $("#computerChoice").text(computerChoice);
+
+        $("#userChoice").text(small);
+        $("#computerChoice").text(computerChoice);
         }
+
     });
 });
