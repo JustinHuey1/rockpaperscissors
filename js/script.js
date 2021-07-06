@@ -9,61 +9,65 @@
 /*global $*/
 // DOCUMENT READY FUNCTION BELOW
 $(document).ready(function(){
-    var first = 0;
-    var second = 0;
-    var randomNumber = 0;
-    var userChoice = "";
-    var computerChoice = "";
-    var winner = "";
+    var userScore = 0;
+    var computerScore = 0;
+    
     $("button").click(function(){
+        var userChoice = "";
+        var computerChoice = "";
+        var winner;
+
         userChoice = $("#input").val();
-        var small = userChoice.toLocaleLowerCase();
-        computerChoice = $("#computerChoice").html();
+        var small = userChoice.toLowerCase();
         $("#userChoice").text(userChoice);
+        
         var randomNumber = Math.random();
-        if(randomNumber <= .33){
-            var computerChoice = "rock";
-        }else if(randomNumber <= .66 && randomNumber >= .33){
-            var computerChoice = "paper";
-        }else if(randomNumber  <= 1 && randomNumber >= .66){
-            var computerChoice = "scissor";
+        if(randomNumber < 0.33){
+            computerChoice = "rock";
+        }else if(randomNumber < 0.66 && randomNumber >= 0.33){
+            computerChoice = "paper";
+        }else if(randomNumber >= 0.66){
+            computerChoice = "scissor";
         }
+
         $("#computerChoice").text(computerChoice);
-        if(userChoice === "rock" && computerChoice === "rock"){
-            $("#winner").text("Tie");
-        }else if(userChoice === "rock" && computerChoice === "paper"){
-            $("#winner").text("Computer Wins");
-        }else if(userChoice === "rock" && computerChoice === "scissor"){
-            $("#winner").text("User Wins");
-        }else if(userChoice === "paper" && computerChoice === "rock"){
-            $("#winner").text("User Wins");
-        }else if(userChoice === "paper" && computerChoice === "paper"){
-            $("#winner").text("Tie");
-        }else if(userChoice === "paper" && computerChoice === "scissor"){
-            $("#winner").text("Computer Wins");
-        }else if(userChoice === "scissor" && computerChoice === "rock"){
-            $("#winner").text("Computer Wins");
-        }else if(userChoice === "scissor" && computerChoice === "paper"){
-            $("#winner").text("User Wins");
-        }else if(userChoice === "scissor" && computerChoice === "scissor"){
-            $("#winner").text("Tie");
-        }else{
-        }
-        
-       
-            if($("#winner").text() === "User Wins"){
-                 first = first + 1;
-                $(".first").text(first);
-            }else if($("#winner").text() === "Computer Wins"){
-                 second = second + 1;
-                $(".second").text(second);
-            }else{
+        if(small === "rock") {
+            if (computerChoice === "rock"){
+                winner = 0;
+            }else if(computerChoice === "paper"){
+                winner = 2;
+            }else if(computerChoice === "scissor"){
+                winner = 1;
             }
-        
-        
-        
-        $("#input").val("");
-        
+        }else if(userChoice === "paper") {
+            if (computerChoice === "rock"){
+                winner = 1;
+            }else if(computerChoice === "paper"){
+                winner = 0;
+            }else if(computerChoice === "scissor"){
+                winner = 2;
+            }
+        }else if(userChoice === "scissor"){
+            if (computerChoice === "rock"){
+                winner = 2;
+            }else if(computerChoice === "paper"){
+                winner = 1;
+            }else if(computerChoice === "scissor"){
+                winner = 0;
+            }
+        }
+         
+        if(winner == 1){
+            userScore = userScore + 1;
+            $(".userScore").text(userScore);
+            $("#winner").text("User Wins");
+        }else if(winner == 2){
+            computerScore = computerScore + 1;
+            $(".computerScore").text(computerScore);
+            $("#winner").text("Computer Wins");
+        } else {
+            $("#winner").text("Tie");
+        }
         
     });
 });
