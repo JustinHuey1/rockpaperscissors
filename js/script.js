@@ -11,6 +11,8 @@
 $(document).ready(function(){
     var userScore = 0;
     var computerScore = 0;
+    $(".userScore").text(userScore);
+    $(".computerScore").text(computerScore);
     
     $("button").click(function(){
         var userChoice = "";
@@ -39,7 +41,7 @@ $(document).ready(function(){
             }else if(computerChoice === "scissor"){
                 winner = 1;
             }
-        }else if(userChoice === "paper") {
+        }else if(small === "paper") {
             if (computerChoice === "rock"){
                 winner = 1;
             }else if(computerChoice === "paper"){
@@ -47,7 +49,7 @@ $(document).ready(function(){
             }else if(computerChoice === "scissor"){
                 winner = 2;
             }
-        }else if(userChoice === "scissor"){
+        }else if(small === "scissor"){
             if (computerChoice === "rock"){
                 winner = 2;
             }else if(computerChoice === "paper"){
@@ -55,6 +57,9 @@ $(document).ready(function(){
             }else if(computerChoice === "scissor"){
                 winner = 0;
             }
+        }else {
+            $("#input").text();
+            $("#winner").text("Please type a valid input");
         }
          
         if(winner == 1){

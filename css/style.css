@@ -7,3 +7,7 @@
   justify-content:space-around;
 }
 
+.scoreRow{
+  display:flex;
+  justify-content: center;
+}
