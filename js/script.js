@@ -33,7 +33,7 @@ $(document).ready(function(){
 
         if(small === "rock") {
             if (computerChoice === "rock"){
-                winner = 0;
+                winner = 3;
             }else if(computerChoice === "paper"){
                 winner = 2;
             }else if(computerChoice === "scissor"){
@@ -43,7 +43,7 @@ $(document).ready(function(){
             if (computerChoice === "rock"){
                 winner = 1;
             }else if(computerChoice === "paper"){
-                winner = 0;
+                winner = 3;
             }else if(computerChoice === "scissor"){
                 winner = 2;
             }
@@ -53,7 +53,7 @@ $(document).ready(function(){
             }else if(computerChoice === "paper"){
                 winner = 1;
             }else if(computerChoice === "scissor"){
-                winner = 0;
+                winner = 3;
             }
         }else {
             $("#input").val("");
@@ -68,11 +68,11 @@ $(document).ready(function(){
             computerScore = computerScore + 1;
             $(".computerScore").text(computerScore);
             $("#winner").text("Computer Wins");
-        } else if (winner == 0){
+        } else if (winner == 3){
             $("#winner").text("Tie");
         }
         
-        if (winner != false){
+        if (winner){
             $("#userChoice").text(small);
             $("#computerChoice").text(computerChoice);
         }
