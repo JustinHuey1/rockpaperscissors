@@ -60,6 +60,7 @@ $(document).ready(function(){
         }else {
             $("#input").text();
             $("#winner").text("Please type a valid input");
+            return;
         }
          
         if(winner == 1){
