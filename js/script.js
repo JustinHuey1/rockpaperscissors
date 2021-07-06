@@ -72,7 +72,7 @@ $(document).ready(function(){
             $("#winner").text("Tie");
         }
         
-        if (winner){
+        if (winner != false){
             $("#userChoice").text(small);
             $("#computerChoice").text(computerChoice);
         }
