@@ -17,7 +17,7 @@ $(document).ready(function(){
     $("button").click(function(){
         var userChoice = "";
         var computerChoice = "";
-        var winner;
+        var winner = false;
 
         userChoice = $("#input").val();
         var small = userChoice.toLowerCase();
@@ -60,7 +60,7 @@ $(document).ready(function(){
             $("#winner").text("Please type a valid input");
         }
          
-        if(winner == 1){
+        if (winner == 1){
             userScore = userScore + 1;
             $(".userScore").text(userScore);
             $("#winner").text("User Wins");
@@ -72,7 +72,9 @@ $(document).ready(function(){
             $("#winner").text("Tie");
         }
         
-        $("#userChoice").text(small);
-        $("#computerChoice").text(computerChoice);
+        if (winner){
+            $("#userChoice").text(small);
+            $("#computerChoice").text(computerChoice);
+        }
     });
 });
